@@ -1,0 +1,20 @@
+přihlášení uživatele
+
+košík
+1.přidání quantity do košíku 
+2.přidání celého objectu do array, která bude obsahovat všechny potřebné informace včertně množství položek
+3.odstranit duplicitu při dalším přidání do košíku
+4.umožnit interaktivně odebírat věci z košíku (pravděpodobně využiju konstruktor)
+
+
+
+Deník vývoje aplikace
+
+Stále mi vrací NaN při přidání quantity v item
+pravděpodobně je problém v tom že přidávám array do items (array) a to dělá chybu a budu muset nějka nejdřív hodnotu v product extrahovat do var. 
+
+testuju zdali parametr product je array nebo object (Array.isArray), protže object je to vždy
+
+vymyslel jse trochu jiné řešení. function addItem bude příjmat pouze jeden par který bude object. ale musím s ním správně pracovat tj psát správně přístup k object jako to mám v prvním conosole logu. 
+
+budu muset pak vsechno dat na local host
