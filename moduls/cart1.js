@@ -1,20 +1,26 @@
 export class Cart {
     constructor() {
-        this.items = [];
+        // Načítání košíku z localStorage, pokud existuje
+        this.items = JSON.parse(localStorage.getItem('cartItems')) || [];
     }
 
     addItem(cartProduct) {
         // Zkontroluj, zda produkt už v košíku je
-        const existingItem = this.items.find(item => item.cartProduct.product.size === cartProduct.product.size);
-
+        const existingItem = this.items.find(item => item.size === cartProduct.size);
 
         if (existingItem) {
-            existingItem.quantity += items.quantity; // Zvýšení množství
+            // Pokud už produkt v košíku je, zvýšíme jeho množství
+            existingItem.quantity += cartProduct.quantity;
         } else {
-            this.items.push(cartProduct); // Přidání nového produktu s množstvím
+            // Pokud produkt není v košíku, přidáme nový
+            this.items.push(cartProduct);
         }
 
-        console.log(`${cartProduct.name} ${cartProduct.size} ${cartProduct.price}bylo přidáno do košíku.`);
+        // Uložíme aktualizovaný košík do localStorage
+        localStorage.setItem('cartItems', JSON.stringify(this.items));
+
+        // Log pro potvrzení
+        console.log(`${cartProduct.name} ${cartProduct.size} ${cartProduct.price} bylo přidáno do košíku.`);
     }
 
     displayCart() {
@@ -22,10 +28,9 @@ export class Cart {
             console.log('Košík je prázdný.');
         } else {
             console.log('Obsah košíku:');
-            this.items.forEach((item, index=> {
-                console.log(`${item.cartProduct.name} ${item.cartProduct.size} - ${item.cartProduct.quantity} ks - ${item.cartProduct.price} za kus`);
-                console.log(this.items)
-            }));
+            this.items.forEach(item => {
+                console.log(`${item.name} ${item.size} - ${item.quantity} ks - ${item.price} za kus`);
+            });
         }
     }
 }

@@ -2,7 +2,6 @@ console.log('1');
 //Budu potřebovat object, ze kterého budu mít innerHTML a bude se přes něho vykreslovat celí obsah stránky.
 //1.vytvořím object s jedním produktem
 //2. vytvořím loop která bude vykreslovat tolik HTML dokud bude něco v objectu
-import {cart} from '../moduls/cart.js';
 import {product} from '../moduls/product.js';
 
 let productHTML= '';

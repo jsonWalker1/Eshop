@@ -164,13 +164,12 @@
 
 
 .img-product {
-    width: 300px;
+    width: 15rem;
 }
 
 .product {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 10px;
+    display: flex;
+    gap: 1rem;
 }
 
 /* main obsah podkategorie */
@@ -191,3 +190,111 @@
 .itemID img{
     width: 40px;
 }
+
+/* Základní breakpoints */
+@media (max-width: 1200px){
+    .container{
+        margin: 0 20px;
+    }
+    .product {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+}}
+@media(max-width:1000px){
+    .item{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+    
+@media (max-width: 768px) {
+    .container {
+        margin: 0 20px;
+    }
+
+    .header-top {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-navigation ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu-mainpage {
+        grid-template-columns: 1fr;
+    }
+
+    .main-navigation {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .forCustomer {
+        grid-template-columns: 1fr;
+    }
+
+    .product {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .item {
+        grid-template-columns: 1fr;
+    }
+
+    .board, .board2 {
+        width: 100%;
+    }
+    .videoMain {
+        display: none;
+    }
+    .menu-mainpage{
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-top {
+        text-align: center;
+        padding: 10px;
+    }
+    .menu-mainpage{
+        display: block;
+    }
+    .header-navigation ul {
+        flex-direction: column;
+    }
+
+    .header-navigation li {
+        padding: 5px;
+    }
+    .product-picture{
+        width: 10px;
+    }
+    .logoIMG {
+        width: 70px;
+    }
+
+    .main-navigation li {
+        margin: 10px;
+    }
+
+    .videoMain {
+        display: none;
+    }
+
+    .board-text {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .itemID {
+        grid-template-columns: 1fr;
+    }
+
+    .product-picture {
+        width: 100%;
+    }
+};

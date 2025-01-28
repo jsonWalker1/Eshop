@@ -16,5 +16,8 @@ pravděpodobně je problém v tom že přidávám array do items (array) a to d�
 testuju zdali parametr product je array nebo object (Array.isArray), protže object je to vždy
 
 vymyslel jse trochu jiné řešení. function addItem bude příjmat pouze jeden par který bude object. ale musím s ním správně pracovat tj psát správně přístup k object jako to mám v prvním conosole logu. 
+Zprovozněno a funguje jak přidávání věcí do košíku tak aplikace je schopna přidat kusy na vícekrát tj nepřídá se duplicitní vstup.
+Takže abych mohl udělat vizualizaci košíku pomocí html musím udělat nějaký local host
 
 budu muset pak vsechno dat na local host
+musim vyřešit to aby to pickovalo konkrétní input a ne že se mi tam dá vždycky ten první input 

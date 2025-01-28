@@ -9,7 +9,7 @@ item.forEach( (item,index) => {
                 <p>${item.name}  ${item.size}</p>
                 <p>${item.status}</p>
                 <p>${item.price}</p>
-                <input type="number" class='js-inputQuantity' >
+                <input type="number" data-index='${index} class='js-inputQuantity' >
                 <button data-index='${index}' class="js-add-cart"><img src="IMG/carticon.bmp" alt=""></button>
             `
 });
@@ -20,6 +20,7 @@ itemDom.innerHTML = itemHTML
 
 
 const myCart = new Cart ()
+myCart.displayCart();
 
 document.querySelectorAll('.js-add-cart').forEach((button)=>{
     button.addEventListener('click', () => {
@@ -33,10 +34,9 @@ document.querySelectorAll('.js-add-cart').forEach((button)=>{
         let quantity = parseInt(element.value);
         
         //console.log(quantity) //test
-        let cartProduct = {...product, quantity}
-        
-        console.log(cartProduct);
-        //console.log(quantity) //test
+        let cartProduct = {...product, quantity};
+        element.value = ''
+        console.log(quantity) //test
         
         myCart.addItem(cartProduct);
         myCart.displayCart();
