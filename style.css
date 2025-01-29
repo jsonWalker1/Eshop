@@ -103,11 +103,6 @@
     background-color: #AAC1C7;
     margin-left: 0;
 }
-.buttonQuick {
-    
-}
-
-
 
 /*main page welcome*/
 .main-video{
@@ -116,7 +111,7 @@
 }
 .videoMain{
     
-    width: 85%;
+    width: 65%;
     height: 400px;
     object-fit: fill;
     
@@ -222,8 +217,7 @@
         text-align: center;
     }
 
-    .menu-mainpage {
-        grid-template-columns: 1fr;
+    .menu-mainpage {a
     }
 
     .main-navigation {
