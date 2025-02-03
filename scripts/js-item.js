@@ -9,7 +9,7 @@ item.forEach( (item,index) => {
                 <p>${item.name}  ${item.size}</p>
                 <p>${item.status}</p>
                 <p>${item.price}</p>
-                <input type="number" data-index='${index} class='js-inputQuantity' >
+                <input type="number" data-index='${index}' class='js-inputQuantity'>
                 <button data-index='${index}' class="js-add-cart"><img src="IMG/carticon.bmp" alt=""></button>
             `
 });
@@ -29,9 +29,10 @@ document.querySelectorAll('.js-add-cart').forEach((button)=>{
         let product = item[index];
         //console.log(selectedItem)
         //picknu input pro množství 
-        let element = document.querySelector('.js-inputQuantity'); 
+        let element = document.querySelector(`.js-inputQuantity[data-index="${index}"]`);
+
         
-        let quantity = parseInt(element.value);
+        let quantity = parseInt(element.value)|| 0;
         
         //console.log(quantity) //test
         let cartProduct = {...product, quantity};
